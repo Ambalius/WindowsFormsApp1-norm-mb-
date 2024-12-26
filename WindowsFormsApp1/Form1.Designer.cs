@@ -2,6 +2,9 @@
 {
     partial class Form1
     {
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnGenerateQRCode;
+
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Button btnAddTask;
         private System.Windows.Forms.TextBox txtTaskName;
@@ -55,7 +58,12 @@
             this.dgvTasks = new System.Windows.Forms.DataGridView();
             this.btnEditTask = new System.Windows.Forms.Button();
             this.btnDeleteTask = new System.Windows.Forms.Button();
+            this.buttonGenerateQR = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddTask
@@ -176,7 +184,7 @@
             // 
             // dtpCreationDate
             // 
-            this.dtpCreationDate.Location = new System.Drawing.Point(772, 408);
+            this.dtpCreationDate.Location = new System.Drawing.Point(936, 411);
             this.dtpCreationDate.Name = "dtpCreationDate";
             this.dtpCreationDate.Size = new System.Drawing.Size(200, 20);
             this.dtpCreationDate.TabIndex = 15;
@@ -184,7 +192,7 @@
             // lblCreationDate
             // 
             this.lblCreationDate.AutoSize = true;
-            this.lblCreationDate.Location = new System.Drawing.Point(769, 392);
+            this.lblCreationDate.Location = new System.Drawing.Point(933, 395);
             this.lblCreationDate.Name = "lblCreationDate";
             this.lblCreationDate.Size = new System.Drawing.Size(87, 13);
             this.lblCreationDate.TabIndex = 16;
@@ -236,9 +244,39 @@
             this.btnDeleteTask.UseVisualStyleBackColor = true;
             this.btnDeleteTask.Click += new System.EventHandler(this.btnDeleteTask_Click);
             // 
+            // buttonGenerateQR
+            // 
+            this.buttonGenerateQR.Location = new System.Drawing.Point(945, 77);
+            this.buttonGenerateQR.Name = "buttonGenerateQR";
+            this.buttonGenerateQR.Size = new System.Drawing.Size(136, 25);
+            this.buttonGenerateQR.TabIndex = 21;
+            this.buttonGenerateQR.Text = "qrcode";
+            this.buttonGenerateQR.UseVisualStyleBackColor = true;
+            this.buttonGenerateQR.Click += new System.EventHandler(this.btnGenerateQRCode_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox.Location = new System.Drawing.Point(893, 130);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(243, 225);
+            this.pictureBox.TabIndex = 22;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(93, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(984, 440);
+            this.ClientSize = new System.Drawing.Size(1148, 443);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.buttonGenerateQR);
             this.Controls.Add(this.btnDeleteTask);
             this.Controls.Add(this.btnEditTask);
             this.Controls.Add(this.dgvTasks);
@@ -262,9 +300,13 @@
             this.Name = "Form1";
             this.Text = "Менеджер задач";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+        private System.Windows.Forms.Button buttonGenerateQR;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

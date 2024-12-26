@@ -1,7 +1,13 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 using Npgsql;
+using QRCoder;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
 
 namespace WindowsFormsApp1
 {
@@ -143,6 +149,7 @@ namespace WindowsFormsApp1
             }
         }
 
+
         private void dgvTasks_SelectionChanged(object sender, EventArgs e)
         {
             // Если выбрана строка в DataGridView
@@ -195,6 +202,37 @@ namespace WindowsFormsApp1
         }
 
         private void dgvTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnGenerateQRCode_Click(object sender, EventArgs e)
+        {
+            // Данные для QR-кода
+            string qrData = "https://yandex.ru/images/search?img_url=https%3A%2F%2Fsun9-77.userapi.com%2Fimpg%2FYwl3qOz4AHlolCvZKlxE4Heo9WN6oiOxwTqFrg%2FsyLGCiv5n7s.jpg%3Fsize%3D1197x1197%26quality%3D95%26sign%3De695490829bafaad2dcbc486c26bfc12%26c_uniq_tag%3Dif1q0Hda_4-ZCO1TDQg-rL38S0YlWyXlrG8LCCFKUMw%26type%3Dalbum&lr=193&pos=0&rpt=simage&serp_list_type=all&source=serp&text=%D0%B4%D1%83%D1%8D%D0%B9%D0%BD%20%D0%B4%D0%B6%D0%BE%D0%BD%D1%81%D0%BE%D0%BD%20%D0%BC%D0%B5%D0%BC%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0";  // Это может быть любой текст или URL
+
+            // Генерация QR-кода
+            BarcodeWriter barcodeWriter = new BarcodeWriter
+            {
+                Format = BarcodeFormat.QR_CODE,
+                Options = new ZXing.Common.EncodingOptions
+                {
+                    Width = 250,   // Ширина QR-кода
+                    Height = 250   // Высота QR-кода
+                }
+            };
+
+            // Генерация изображения QR-кода
+            Bitmap qrCodeImage = barcodeWriter.Write(qrData);
+
+            // Отображение QR-кода в PictureBox
+            pictureBox.Image = qrCodeImage;
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
         {
 
         }
